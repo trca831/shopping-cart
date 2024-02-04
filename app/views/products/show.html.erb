@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1> <%= @product.title %> </h1>
+<p>
+<%= @product.body %>
+</p>
+<%= render @product %>
+
+<div>
+  <%= link_to "Edit this product", edit_product_path(@product) %> |
+  <%= link_to "Back to products", products_path %>
+
+  <%= link_to 'Delete', @product, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+</div>
