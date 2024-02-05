@@ -1,5 +1,5 @@
 class Product < ApplicationRecord
     def title
-        "#{name} - #{price}"
+        "#{name}"
     end
 end
