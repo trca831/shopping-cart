@@ -1,5 +1,6 @@
 class Product < ApplicationRecord
-    def title
-        "#{name}"
-    end
+    has_many :cart_items
+
+    has_many :carts, through: :cart_items
+
 end
