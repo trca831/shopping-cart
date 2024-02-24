@@ -1,10 +1,11 @@
-class CartController < ApplicationController
+class CartsController < ApplicationController
     def index
         @carts = Cart.all
     end
 
     def show
         @cart = Cart.find(params[:id])
+        @cart_items = @cart.cart_items.includes(:product)
     end
 
     def new

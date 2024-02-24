@@ -1,0 +1,17 @@
+<h1>Hello! Cart</h1>
+<ul>
+  <% @cart.cart_items.each do |cart_item| %>
+    <li>
+      <%= cart_item.product.name %>
+      Quantity: <%= cart_item.quantity %>
+      <!-- You can add additional information about the product here -->
+    </li>
+  <% end %>
+</ul>
+
+<h1> <%= @cart.name %> </h1> 
+
+<p> It costs $<%= @cart.price%> </p>
+<p> Only <%= @cart.amount%> are left! </p>
+
+<%=link_to "New Cart Item", new_cart_cart_item_path(@cart) %>
