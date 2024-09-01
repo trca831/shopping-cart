@@ -16,6 +16,13 @@
 @import "bootstrap";
 
 :root {
-    --bs-body-bg: #e7a3f0;
+    --bs-body-bg: #efd3bb;
  }
+
+ .banner-background {
+    background-image: url('Canteen.png');
+    background-size: cover;
+    height: 300px; 
+ }
+
  
