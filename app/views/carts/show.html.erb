@@ -14,4 +14,4 @@
 <p> It costs $<%= @cart.price%> </p>
 <p> Only <%= @cart.amount%> are left! </p>
 
-<%=link_to "New Cart Item", new_cart_cart_item_path(@cart) %>
+<%=  link_to "New Cart Item", new_cart_cart_item_path(@cart), class: "btn btn-primary" %>
