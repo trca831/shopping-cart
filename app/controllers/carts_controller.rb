@@ -16,4 +16,5 @@ class CartsController < ApplicationController
        
        render plain: params.class
     end
+
 end

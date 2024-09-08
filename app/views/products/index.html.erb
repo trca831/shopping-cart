@@ -1,41 +1,46 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Products</h1>
+<h1> Product Inventory</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th> Name </th>
-      <th> Price </th>
-      <th> Image </th>
-      <th> Amount </th>
-     
-    </tr>
-  </thead>
+<div class="container-fluid row">
 
-  <tfoot> 
-    <tr>
-    <td colspan="4"> HERE IS THE FOOTER </td>
-    </tr>
-  </tfoot>
-
-<tbody>
-<div id="products">
   <% @products.each do |product| %>
-    <tr>
-      <td> <%= product.name %> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <%= render product %>
-    <p>
-      <%=  link_to "Show this product", product, class: "btn btn-primary" %>
-    </p>
+    <div class="col-sm">
+      <div class="card bcart bcart-2 bcart-success p-1 mt-3" style="width: 18rem;">
+          <div class="card-header text-center">
+          <h3 class="mb-0">
+            <%= product.name %>
+          </h3>
+          </div>
+
+        
+        <div class="card-body text-center">
+        Price = $<%= product.price %>
+        <br>
+        Amount = <%= product.amount %>
+        </div>
+
+        <div class="card-footer d-flex justify-content-between">
+          <%= link_to 'Edit', edit_product_path(product), class: "btn btn-primary" %> 
+          <%= button_to "Delete", product, method: :delete, data: { turbo_confirm: "Are you sure?"}, class: "btn btn-danger" %>
+        </div>
+      </div>
+    </div>
   <% end %>
+
 </div>
-</tbody>
-</table>
+
 <br>
 
+<p>
 <%=  link_to "New product", new_product_path, class: "btn btn-primary" %>
+</p>
+
+
+<br>
+
+<tfoot> 
+    <tr>
+        <td colspan="1">All rights reserved.</td>
+    </tr>
+</tfoot>

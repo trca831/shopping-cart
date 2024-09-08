@@ -1,7 +1,46 @@
-<h1> Shopping Cart </h1>
+<h1> Shopping Cart</h1>
 
-<% @carts.each do |cart| %>
-    <p> <%= link_to cart.name, cart_path(cart) %> </p> 
-<% end %>
+<div class="container-fluid row">
 
-<%= link_to 'New Cart', new_cart_path, class: "btn btn-primary" %>
+  <% @carts.each do |cart| %>
+    <div class="col-sm">
+      <div class="card bcart bcart-2 bcart-success p-1 mt-3" style="width: 18rem;">
+          <div class="card-header text-center">
+          <h3 class="mb-0">
+            <%= cart.name %>
+          </h3>
+          </div>
+
+        
+        <div class="card-body text-center">
+        Price = $<%= cart.price %>
+        <br>
+        Amount = <%= cart.amount %>
+        </div>
+
+        <div class="card-footer d-flex justify-content-between">
+          <%= link_to 'Edit', edit_product_path(cart), class: "btn btn-primary" %> 
+          <%= button_to "Delete", cart, method: :delete, data: { turbo_confirm: "Are you sure?"}, class: "btn btn-danger" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+</div>
+
+<br>
+
+<!-- Calculate and display the total amount and total price -->
+<% total_amount = @carts.sum(&:amount) %>
+<% total_price = @carts.sum { |cart| cart.price * cart.amount } %>
+
+<div class="text-center">
+  <h3>Total Amount: <%= total_amount %></h3>
+  <h3>Total Price: $<%= total_price %></h3>
+</div>
+
+<br>
+
+<p>
+  <%= link_to 'New Cart', new_cart_path, class: "btn btn-primary" %>
+</p>
