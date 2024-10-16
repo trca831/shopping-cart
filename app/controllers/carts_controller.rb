@@ -1,6 +1,7 @@
 class CartsController < ApplicationController
     def index
-        @carts = Cart.all
+        @carts = Cart.all #commented it out to see if line 4 will work
+        # @cart = Cart.find_by(id: session[:cart_id]) || Cart.new
     end
 
     def show
@@ -13,7 +14,6 @@ class CartsController < ApplicationController
     end
 
     def create
-       
        render plain: params.class
     end
 

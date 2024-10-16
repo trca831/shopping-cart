@@ -1,0 +1,13 @@
+<h1>Hello! Cart</h1>
+<ul>
+ 
+    <li>
+      <%= @cart_item.product.name %>
+      Quantity: <%= cart_item.quantity %>
+      <!-- You can add additional information about the product here -->
+    </li>
+
+</ul>
+
+
+<%=  link_to "Back to cart", cart_path(@cart), class: "btn btn-primary" %>

@@ -1,23 +1,2 @@
-<%= form_for(@cart) do |f| %>
-
-    <div class="field">
-        <%= f.label :name %>
-        <%= f.text_field :name %>
-    </div>
-
-    <div class="field">
-        <%= f.label :amount %>
-        <%= f.text_field :amount %>
-    </div>
-
-    <div class="field">
-        <%= f.label :price %>
-        <%= f.text_field :price %>
-    </div>
-
-    <div>
-    <%= f.submit %>
-    </div>
-    
-<% end %>
+<%= render "form", carts: @carts, cart: @cart%>
 
