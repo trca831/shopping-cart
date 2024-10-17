@@ -33,20 +33,22 @@ Changes I made!!!
 *updated the action destroy for cart-item controller (may or may not expect carts)
 *views for cart_item has edit and show now
 *made sure that cart needs edit and form... 
-
-Need to fix the following items:
+**** destroy buttons are working just fine****
 *need to make buttons in views for the delete functions in controller
 **link to to pass it a method of delete (download rails javascript unintrusive package)
 *** use turbo method delete 
 <%= link_to "Delete post", post_path(post), data: { turbo_method: "delete", turbo_confirm: "Are you sure?" } %>
-
 **for a button, cannot use it in a form... can create a button which creates a form in itself 
+
+Need to fix the following items:
+
 
 
 *I need to fix this: format.html { redirect_to carts_url }
 *Make sure that this goes to the correct cart path<%=  link_to "Back to cart", cart_path(@cart), class: "btn btn-primary" %>
 *fix this route: http://localhost:3000/carts/cart_items/new to create new cart items (its calling cart items and I dont have that. It needs to show something like cart/1/cart_items/new) and its showing all the carts... i want to call a singular cart
 
+*everytime I create a new cart item, it does not go back to the shopping cart, I need to fix that.
 
 *add a dropdown menu in cart section
 *make sure links are working (by using server as a guidance)

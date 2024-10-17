@@ -1,2 +1,11 @@
-<%= render "form", carts: @carts, cart: @cart%>
+<h1>New Item</h1>
+
+<%= render "form", carts: @carts, cart: @cart %>
+
+
+<br>
+
+<div>
+  <%=  link_to "Back to cart", carts_path, class: "btn btn-primary" %>
+</div>
 
