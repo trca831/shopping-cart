@@ -1,0 +1,41 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Products</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th> Name </th>
+      <th> Price </th>
+      <th> Image </th>
+      <th> Amount </th>
+     
+    </tr>
+  </thead>
+
+  <tfoot> 
+    <tr>
+    <td colspan="4"> HERE IS THE FOOTER </td>
+    </tr>
+  </tfoot>
+
+<tbody>
+<div id="products">
+  <% @products.each do |product| %>
+    <tr>
+      <td> <%= product.title %> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <%= render product %>
+    <p>
+      <%= link_to "Show this product", product %>
+    </p>
+  <% end %>
+</div>
+</tbody>
+</table>
+<br>
+
+<%= link_to "New product", new_product_path %>
