@@ -1,4 +1,4 @@
-<h1>Hello! Cart</h1>
+<h1>Cart Item Shown Here:</h1>
 <ul>
   <% @cart.cart_items.each do |cart_item| %>
     <li>
@@ -11,7 +11,7 @@
 
 <h1> <%= @cart.name %> </h1> 
 
-<p> It costs $<%= @cart.price%> </p>
-<p> Only <%= @cart.amount%> are left! </p>
+<p> It costs $<%= @cart.price%> per item. </p>
+<p> Currently buying <%= @cart.amount%> <%= @cart.name%>.  </p>
 
 <%=  link_to "New Cart Item", new_cart_cart_item_path(@cart), class: "btn btn-primary" %>
