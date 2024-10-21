@@ -1,23 +1,11 @@
-<%= form_for(@cart) do |f| %>
+<h1>New Item</h1>
 
-    <div class="field">
-        <%= f.label :name %>
-        <%= f.text_field :name %>
-    </div>
+<%= render "form", carts: @carts, cart: @cart %>
 
-    <div class="field">
-        <%= f.label :amount %>
-        <%= f.text_field :amount %>
-    </div>
 
-    <div class="field">
-        <%= f.label :price %>
-        <%= f.text_field :price %>
-    </div>
+<br>
 
-    <div>
-    <%= f.submit %>
-    </div>
-    
-<% end %>
+<div>
+  <%=  link_to "Back to cart", carts_path, class: "btn btn-primary" %>
+</div>
 

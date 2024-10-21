@@ -11,5 +11,10 @@ class Cart < ApplicationRecord
   def remove_product(product)
     products.delete(product)
   end
+
+      validates :name, presence: true, format: { with: /\A[a-z\-' ]+\z/i }
+      validates :amount, presence: true
+      validates :price, presence: true, numericality: { greater_than: 0 }
+
   
 end

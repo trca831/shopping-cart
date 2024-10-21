@@ -22,15 +22,11 @@ class ProductsController < ApplicationController
   # POST /products or /products.json
   def create
     @product = Product.new(product_params)
-
-    respond_to do |format|
-      if @product.save
-        format.html { redirect_to product_url(@product), notice: "Product was successfully created." }
-        format.json { render :show, status: :created, location: @product }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @product.errors, status: :unprocessable_entity }
-      end
+    # debugger
+    if @product.save
+      redirect_to @product, notice: 'Product was successfully created.'
+    else
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -60,7 +56,10 @@ class ProductsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_product
-      @product = Product.find(params[:id])
+      @product = Product.find_by(id: params[:id])
+      unless @product
+        redirect_to products_path, alert: "Product not found"
+      end
     end
 
     # Only allow a list of trusted parameters through.

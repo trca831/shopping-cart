@@ -16,6 +16,20 @@
 @import "bootstrap";
 
 :root {
-    --bs-body-bg: #e7a3f0;
+    --bs-body-bg: #efd3bb;
+ }
+
+ .banner-background {
+    background-image: url('Cantina.png');
+    background-size: cover;
+    height: 320px; 
+ }
+
+ @font-face {
+   font-family: 'OpenSans-VariableFont_wdth,wght';
+   src: url('OpenSans-VariableFont_wdth,wght.ttf');
  }
  
+ * {
+   font-family: 'OpenSans-VariableFont_wdth,wght' !important ;
+ }
