@@ -40,9 +40,23 @@ Changes I made!!!
 <%= link_to "Delete post", post_path(post), data: { turbo_method: "delete", turbo_confirm: "Are you sure?" } %>
 **for a button, cannot use it in a form... can create a button which creates a form in itself 
 
+Changes made on Oct 29th:
+Added following to product factory:
+
+require 'faker'
+FactoryBot.define do
+  factory :customer do |f|
+    f.first_name { Faker::Name.first_name }
+    f.last_name { Faker::Name.last_name }
+    f.phone { Faker::Number.number(digits: 10) }
+    f.email { Faker::Internet.email }
+  end
+end 
+
+then add the two files for models and requests
+
+**********************************************************************
 Need to fix the following items:
-
-
 
 *I need to fix this: format.html { redirect_to carts_url }
 *Make sure that this goes to the correct cart path<%=  link_to "Back to cart", cart_path(@cart), class: "btn btn-primary" %>
@@ -58,3 +72,23 @@ Future changes to be made:
 *add pagination in the future
 *take a look at customers and orders on R7 additional for inspiration
 *I need to a form for carts views in the future 
+
+
+<div...>
+    <%= form.label :image, style: "display: block" %>
+    <%= form.text_field :image %>
+  </div...>
+
+  ---> image field for upload active storage 
+  --> create a new branch for this
+
+  <div...>
+    <%= form.label :amount, style: "display: block" %>
+    <%= form.text_field :amount %>
+  </div..>
+
+  --> change to number field 
+  --> create a new branch for this one 
+
+  change into a small form with checkboxes and use submit button (use gem for searches, its called **ransack... or direct active queries) Products can be searched...
+  query active records using params 
