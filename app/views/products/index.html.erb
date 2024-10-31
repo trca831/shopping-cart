@@ -18,6 +18,10 @@
         Price = $<%= product.price %>
         <br>
         Amount = <%= product.amount %>
+        <br>
+       <%= image_tag url_for(product.avatar) if product.avatar.attached? %>
+        <br>
+
         </div>
 
         <div class="card-footer d-flex justify-content-between">

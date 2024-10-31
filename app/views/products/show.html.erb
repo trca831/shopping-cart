@@ -15,6 +15,14 @@
 <%= @product.image %> 
 </p>
 
+<p>
+<% if @product.avatar.attached? %>
+  <%= image_tag url_for(@product.avatar) if @product.avatar.attached? %>
+<% end %>
+</p>
+
+
+
 <p> 
 <strong> Amount </strong>
 <%= @product.amount %> 

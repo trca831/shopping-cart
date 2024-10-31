@@ -17,6 +17,7 @@ class ProductsController < ApplicationController
 
   # GET /products/1/edit
   def edit
+    @product.avatar.attach(params[:avatar])
   end
 
   # POST /products or /products.json
@@ -64,6 +65,6 @@ class ProductsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def product_params
-      params.require(:product).permit(:name, :price, :image, :amount)
+      params.require(:product).permit(:name, :price, :image, :amount, :avatar)
     end
 end
