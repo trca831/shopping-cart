@@ -72,3 +72,9 @@ group :test do
 end
 
 gem "bootstrap", "~> 5.3"
+
+gem 'rspec-rails'
+gem 'factory_bot_rails'
+gem 'faker'
+gem 'rails-controller-testing'
+gem 'rexml'
