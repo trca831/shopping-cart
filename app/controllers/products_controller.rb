@@ -17,7 +17,7 @@ class ProductsController < ApplicationController
 
   # GET /products/1/edit
   def edit
-    @product.avatar.attach(params[:avatar])
+    # @product.avatar.attach(params[:avatar])
   end
 
   # POST /products or /products.json
@@ -31,10 +31,13 @@ class ProductsController < ApplicationController
     end
   end
 
+  
+
   # PATCH/PUT /products/1 or /products/1.json
   def update
     respond_to do |format|
       if @product.update(product_params)
+        @product.avatar.attach(params[:avatar]) if params[:avatar].present?
         format.html { redirect_to product_url(@product), notice: "Product was successfully updated." }
         format.json { render :show, status: :ok, location: @product }
       else

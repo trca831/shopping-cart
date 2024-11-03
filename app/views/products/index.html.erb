@@ -1,6 +1,6 @@
 <p style="color: green"><%= notice %></p>
 
-<h1> Product Inventory</h1>
+<h1>Product Inventory</h1>
 
 <div class="container-fluid row">
 
@@ -19,7 +19,7 @@
         <br>
         Amount = <%= product.amount %>
         <br>
-       <%= image_tag url_for(product.avatar) if product.avatar.attached? %>
+       <%= image_tag url_for(product.avatar), width: 150, height: 150  if product.avatar.attached? %>
         <br>
 
         </div>
