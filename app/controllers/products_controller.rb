@@ -1,6 +1,12 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: %i[ show edit update destroy ]
 
+  def home
+    # Any logic you want to display on the home page can go here
+    # For example, you might want to show all products:
+    @products = Product.all
+  end
+
   # GET /products or /products.json
   def index
     @products = Product.all
