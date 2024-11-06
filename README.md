@@ -43,7 +43,7 @@ I used Ruby on Rails to create associations between the products, employees, ind
 -[] I need to a form for carts views in the future 
 
 **Sunday, November 2nd**
--[] set a root or home page in your routes 
+-[x] set a root or home page in your routes (Nov 5th)
 -[] Add more links for the user to navigate, especially to the cart item sections; it's inaccessible unless you use the url.
 -[] Use SQL to get information that we want to join tables
 -[] Revisit how order details equals cart items (and include price in the product table)
