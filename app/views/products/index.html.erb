@@ -1,6 +1,12 @@
 <p style="color: green"><%= notice %></p>
 
 <h1>Product Inventory</h1>
+<br>
+<p>
+<%=  link_to "New Product", new_product_path, class: "btn btn-primary" %>
+
+  <%=  link_to "Shopping Cart", carts_path, class: "btn btn-primary" %>
+</p>
 
 <div class="container-fluid row">
 
@@ -33,12 +39,6 @@
   <% end %>
 
 </div>
-
-<br>
-
-<p>
-<%=  link_to "New product", new_product_path, class: "btn btn-primary" %>
-</p>
 
 
 <br>

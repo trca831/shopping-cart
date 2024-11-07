@@ -13,6 +13,13 @@
 
 <br>
 
+<p>
+<%=  link_to "New Product", new_product_path, class: "btn btn-primary" %>
+ <%=  link_to "View Product List", products_path, class: "btn btn-primary" %>
+</p>
+
+<br>
+
 <!-- Dropdown to select a cart -->
 <%= form_with(url: new_cart_path, method: :get, local: true) do |f| %>
   <div class="field">
